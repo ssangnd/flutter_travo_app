@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:travo_app/core/constants/color_constants.dart';
+import 'package:travo_app/core/helpers/local_storage_helper.dart';
 import 'package:travo_app/representation/screen/splash_creen.dart';
 import 'package:travo_app/routes.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
+  await LocalStorageHelper.initLocalStorageHelper();
   runApp(const MyApp());
 }
 
