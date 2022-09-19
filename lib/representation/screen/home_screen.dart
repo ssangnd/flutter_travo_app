@@ -14,6 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     // return Container();
     return AppBarContainerWidget(
+      // title: const Text("Home"),
+      titleString: 'Home',
+      implementLeading: true,
+      implementTraling: true,
       child: Container(
         color: Colors.amber,
       ),
