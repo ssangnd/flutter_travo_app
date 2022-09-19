@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travo_app/core/constants/color_constants.dart';
 import 'package:travo_app/core/constants/dismension_constants.dart';
 import 'package:travo_app/core/helpers/image_helper.dart';
+import 'package:travo_app/representation/screen/hotel_booking_screen.dart';
 import 'package:travo_app/representation/screen/hotel_screen.dart';
 
 import '../../core/helpers/asset_helper.dart';
@@ -148,7 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: kBottomBarIconSize,
                     ),
                     const Color(0xffFE9C5E), () {
-                  Navigator.of(context).pushNamed(HotelScreen.routeName);
+                  Navigator.of(context).pushNamed(HotelBookingScreen.routeName);
                 }, 'Hotels'),
               ),
               const SizedBox(
