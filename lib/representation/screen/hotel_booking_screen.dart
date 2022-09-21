@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travo_app/core/constants/dismension_constants.dart';
 import 'package:travo_app/core/helpers/asset_helper.dart';
+import 'package:travo_app/representation/screen/select_date_screen.dart';
 import 'package:travo_app/representation/widgets/app_bar-container.dart';
 import 'package:travo_app/representation/widgets/button_widget.dart';
 import 'package:travo_app/representation/widgets/item_booking_widget.dart';
+import 'package:travo_app/core/extensions/date_ext.dart';
 
 class HotelBookingScreen extends StatefulWidget {
   const HotelBookingScreen({super.key});
@@ -15,6 +17,7 @@ class HotelBookingScreen extends StatefulWidget {
 }
 
 class _HotelBookingScreenState extends State<HotelBookingScreen> {
+  String? dateSelected;
   @override
   Widget build(BuildContext context) {
     return AppBarContainerWidget(
@@ -34,12 +37,25 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
               const SizedBox(
                 height: kMediumPadding,
               ),
-              ItemBookingWidget(
-                icon: AssetHelper.icoCalendal,
-                title: 'Select date',
-                description: '13 Feb - 18 Feb 2021',
-                onTap: () {},
-              ),
+              StatefulBuilder(builder: (context, setSate) {
+                return ItemBookingWidget(
+                  icon: AssetHelper.icoCalendal,
+                  title: 'Select date',
+                  description: dateSelected ?? '13 Feb - 18 Feb 2021',
+                  onTap: () async {
+                    //khi quay lai can hung no
+                    // Navigator.of(context).pushNamed(SelectDateScreen.routeName);
+                    final result = await Navigator.of(context)
+                        .pushNamed(SelectDateScreen.routeName);
+                    if (!(result as List<DateTime?>)
+                        .any((element) => element == null)) {
+                      dateSelected =
+                          '${result[0]?.getStartDate} - ${result[1]?.getEndDate}';
+                      setState(() {});
+                    }
+                  },
+                );
+              }),
               const SizedBox(
                 height: kMediumPadding,
               ),
