@@ -12,8 +12,9 @@ final Map<String, WidgetBuilder> routes = {
   SplashScreen.routeName: (context) => const SplashScreen(),
   IntroScreen.routeName: (context) => const IntroScreen(),
   MainApp.routeName: (context) => const MainApp(),
-  HotelScreen.routeName: (context) => const HotelScreen(),
   HotelBookingScreen.routeName: (context) => const HotelBookingScreen(),
   SelectDateScreen.routeName: (context) => SelectDateScreen(),
-  GuestAndRoomBookingScreen.routeName: (context) => GuestAndRoomBookingScreen(),
+  GuestAndRoomBookingScreen.routeName: (context) =>
+      const GuestAndRoomBookingScreen(),
+  HotelScreen.routeName: (context) => const HotelScreen(),
 };

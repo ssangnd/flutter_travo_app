@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travo_app/core/constants/dismension_constants.dart';
 import 'package:travo_app/core/helpers/asset_helper.dart';
 import 'package:travo_app/representation/screen/guest_and_room_booking_screen.dart';
+import 'package:travo_app/representation/screen/hotel_screen.dart';
 import 'package:travo_app/representation/screen/select_date_screen.dart';
 import 'package:travo_app/representation/widgets/app_bar-container.dart';
 import 'package:travo_app/representation/widgets/button_widget.dart';
@@ -74,7 +75,9 @@ class _HotelBookingScreenState extends State<HotelBookingScreen> {
               ),
               ButtonWidget(
                 title: "Search",
-                ontap: (() {}),
+                ontap: (() {
+                  Navigator.of(context).pushNamed(HotelScreen.routeName);
+                }),
               )
             ],
           ),
