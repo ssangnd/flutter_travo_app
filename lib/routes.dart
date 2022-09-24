@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:travo_app/representation/screen/hotel_detail_screen.dart';
 import 'package:travo_app/representation/screen/hotel_screen.dart';
 import 'package:travo_app/representation/screen/intro_screen.dart';
 import 'package:travo_app/representation/screen/main_app.dart';
@@ -17,4 +18,5 @@ final Map<String, WidgetBuilder> routes = {
   GuestAndRoomBookingScreen.routeName: (context) =>
       const GuestAndRoomBookingScreen(),
   HotelScreen.routeName: (context) => const HotelScreen(),
+  HotelDetailScreen.routeName: (context) => const HotelDetailScreen(),
 };

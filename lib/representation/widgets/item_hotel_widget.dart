@@ -4,6 +4,7 @@ import 'package:travo_app/core/constants/dismension_constants.dart';
 import 'package:travo_app/core/helpers/asset_helper.dart';
 import 'package:travo_app/core/helpers/image_helper.dart';
 import 'package:travo_app/data/models/hotel_model.dart';
+import 'package:travo_app/representation/screen/hotel_detail_screen.dart';
 import 'package:travo_app/representation/widgets/button_widget.dart';
 import 'package:travo_app/representation/widgets/dashline_widget.dart';
 
@@ -101,7 +102,10 @@ class ItemHotelWidget extends StatelessWidget {
                     Expanded(
                       child: ButtonWidget(
                         title: 'Book a room',
-                        ontap: () {},
+                        ontap: () {
+                          Navigator.of(context)
+                              .pushNamed(HotelDetailScreen.routeName);
+                        },
                       ),
                     ),
                   ],
