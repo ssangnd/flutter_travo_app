@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:travo_app/data/models/hotel_model.dart';
 import 'package:travo_app/representation/screen/hotel_detail_screen.dart';
 import 'package:travo_app/representation/screen/hotel_screen.dart';
 import 'package:travo_app/representation/screen/intro_screen.dart';
@@ -18,5 +19,20 @@ final Map<String, WidgetBuilder> routes = {
   GuestAndRoomBookingScreen.routeName: (context) =>
       const GuestAndRoomBookingScreen(),
   HotelScreen.routeName: (context) => const HotelScreen(),
-  HotelDetailScreen.routeName: (context) => const HotelDetailScreen(),
+  // HotelDetailScreen.routeName: (context) => const HotelDetailScreen(),
 };
+
+MaterialPageRoute<dynamic>? generateRoutes(RouteSettings settings) {
+  switch (settings.name) {
+    case HotelDetailScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) {
+          final hotelModel = (settings.arguments as HotelModel);
+          return HotelDetailScreen(
+            hotelModel: hotelModel,
+          );
+        },
+      );
+    default:
+  }
+}
