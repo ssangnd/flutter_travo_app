@@ -6,6 +6,7 @@ import 'package:travo_app/core/constants/color_constants.dart';
 import 'package:travo_app/core/constants/dismension_constants.dart';
 import 'package:travo_app/core/helpers/asset_helper.dart';
 import 'package:travo_app/core/helpers/image_helper.dart';
+import 'package:travo_app/representation/screen/select_room_screen.dart';
 import 'package:travo_app/representation/widgets/button_widget.dart';
 
 import '../../data/models/hotel_model.dart';
@@ -210,7 +211,13 @@ Grand Luxury’s is set in a building built in the
                           const SizedBox(
                             height: kDefaultPadding * 2,
                           ),
-                          const ButtonWidget(title: 'Select room'),
+                          ButtonWidget(
+                            title: 'Select room',
+                            ontap: () {
+                              Navigator.of(context)
+                                  .pushNamed(SelectRoomScreen.routeName);
+                            },
+                          ),
                         ],
                       ),
                     ),
